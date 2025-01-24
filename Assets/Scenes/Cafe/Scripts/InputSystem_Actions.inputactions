@@ -1023,7 +1023,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "View2",
+                    "name": "SwitchCameraW",
                     "type": "Button",
                     "id": "2919a83f-1bdf-4546-8455-617007c878f8",
                     "expectedControlType": "",
@@ -1032,9 +1032,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "View1",
+                    "name": "SwitchCameraS",
                     "type": "Button",
-                    "id": "5ee6d564-c8ca-4b92-9259-1c8f8148e67b",
+                    "id": "53605876-0068-4240-9729-39b6a6702038",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -1110,23 +1110,23 @@
                 },
                 {
                     "name": "",
-                    "id": "9ae52a34-1738-4c04-8d01-54cec8a84960",
+                    "id": "c29718ad-dc8e-437e-bd36-7ebbf6c4fd0c",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "View2",
+                    "action": "SwitchCameraS",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "ae6933b8-56ad-4e81-b311-ce2c6179767d",
+                    "id": "2740cad3-d810-46d9-b74d-4b92ce5812f8",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "View1",
+                    "action": "SwitchCameraW",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

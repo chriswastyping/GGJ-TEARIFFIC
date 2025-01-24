@@ -1,34 +1,40 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb2d;
-    
-    public float moveSpeed = 5f;
 
+    public float moveSpeed = 5f;
     private Vector2 movementDirection;
-    
+
     public InputActionReference moveAction;
-    
-    public InputActionReference changeViewAction;
-    public InputActionReference changeViewAction2;
-    
+    public InputActionReference switchToPOV1Action; // W
+    public InputActionReference switchToPOV2Action; // S
+
+    public GameObject mainCamera;
+    public GameObject povCamera1;
     public GameObject povCamera2;
-    
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    private CameraState currentState = CameraState.Main;
+
+    private enum CameraState
+    {
+        Main,
+        POV1,
+        POV2
+    }
+
     void Start()
     {
-        
+        ActivateCamera(CameraState.Main);
     }
 
     private void FixedUpdate()
     {
-        rb2d.linearVelocity = new Vector2(movementDirection.x * moveSpeed, 0);
+        rb2d.linearVelocity = new Vector2(movementDirection.x * moveSpeed, rb2d.linearVelocity.y);
     }
 
-    // Update is called once per frame
     void Update()
     {
         movementDirection = moveAction.action.ReadValue<Vector2>();
@@ -36,25 +42,48 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        changeViewAction.action.started += CafeView;
-        changeViewAction2.action.started += CounterView;
+        switchToPOV1Action.action.started += SwitchToPOV1;
+        switchToPOV2Action.action.started += SwitchToPOV2;
     }
 
     private void OnDisable()
     {
-        changeViewAction.action.started -= CafeView;
-        changeViewAction2.action.started -= CounterView;
-    }
-    
-    private void CafeView(InputAction.CallbackContext obj)
-    {
-        povCamera2.SetActive(true);
+        switchToPOV1Action.action.started -= SwitchToPOV1;
+        switchToPOV2Action.action.started -= SwitchToPOV2;
     }
 
-    private void CounterView(InputAction.CallbackContext obj)
+    private void SwitchToPOV1(InputAction.CallbackContext context)
     {
-        povCamera2.SetActive(false);
+        if (currentState == CameraState.Main)
+        {
+            ActivateCamera(CameraState.POV1);
+        }
+        else if (currentState == CameraState.POV2)
+        {
+            ActivateCamera(CameraState.Main);
+        }
     }
-    
-    
+
+    private void SwitchToPOV2(InputAction.CallbackContext context)
+    {
+        if (currentState == CameraState.POV1)
+        {
+            ActivateCamera(CameraState.Main);
+        }
+        else if (currentState == CameraState.Main)
+        {
+            ActivateCamera(CameraState.POV2);
+        }
+    }
+
+    private void ActivateCamera(CameraState state)
+    {
+        // Activate/deactivate cameras based on state
+        mainCamera.SetActive(state == CameraState.Main);
+        povCamera1.SetActive(state == CameraState.POV1);
+        povCamera2.SetActive(state == CameraState.POV2);
+
+        // Update current state
+        currentState = state;
+    }
 }

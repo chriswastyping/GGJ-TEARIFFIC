@@ -1966,6 +1966,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 448784879}
     m_Modifications:
+    - target: {fileID: 522858551243585761, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
+      propertyPath: cupPrefab
+      value: 
+      objectReference: {fileID: -3888481672020999207, guid: a0a39d6dd49c6014f8e1e161ed603d1a, type: 3}
+    - target: {fileID: 2226656038005261449, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 6cbe24f9-5e19-4b2b-9179-a381e0fa8a41
+      objectReference: {fileID: 0}
     - target: {fileID: 2811897000319560480, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.591

@@ -23,6 +23,14 @@ public class PlayerMovement : MonoBehaviour
     [Header("Serve")]
     public GameObject serveCanvas;
     public bool isServing = false;
+    
+    [Header("Making")]
+    public GameObject makingCanvas;
+    public bool isMaking = false;
+    
+    [Header("Menu")]
+    public GameObject menuCanvas;
+    public bool openMenu = false;
 
     private enum CameraState
     {
@@ -73,6 +81,23 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void Making()
+    {
+        // for the order tickets?
+    }
+
+    void Menu()
+    {
+        if (openMenu)
+        {
+            menuCanvas.SetActive(true);
+        }
+        else
+        {
+            menuCanvas.SetActive(false);
+        }
+    }
+
     private void SwitchToPOV1(InputAction.CallbackContext context)
     {
         if (currentState == CameraState.Main)
@@ -84,6 +109,9 @@ public class PlayerMovement : MonoBehaviour
         else if (currentState == CameraState.POV2)
         {
             ActivateCamera(CameraState.Main);
+            openMenu = false;
+            Menu();
+           
         }
     }
 
@@ -98,7 +126,8 @@ public class PlayerMovement : MonoBehaviour
         else if (currentState == CameraState.Main)
         {
             ActivateCamera(CameraState.POV2);
-          
+            openMenu = true;
+            Menu();
         }
     }
 

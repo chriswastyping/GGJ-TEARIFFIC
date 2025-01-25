@@ -1966,21 +1966,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 448784879}
     m_Modifications:
-    - target: {fileID: 522858551243585761, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
-      propertyPath: cupPrefab
-      value: 
-      objectReference: {fileID: -3888481672020999207, guid: a0a39d6dd49c6014f8e1e161ed603d1a, type: 3}
-    - target: {fileID: 2226656038005261449, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
-      propertyPath: m_DefaultActionMap
-      value: 6cbe24f9-5e19-4b2b-9179-a381e0fa8a41
+    - target: {fileID: 697623282145082268, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
+      propertyPath: m_Constraints
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 697623282145082268, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2811897000319560480, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.591
+      value: -1.119
       objectReference: {fileID: 0}
     - target: {fileID: 2811897000319560480, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.75
+      value: -1.63
       objectReference: {fileID: 0}
     - target: {fileID: 2811897000319560480, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2014,6 +2014,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3354645804899351144, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
+      propertyPath: serveCamera
+      value: 
+      objectReference: {fileID: 1754560150}
+    - target: {fileID: 3354645804899351144, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
+      propertyPath: serveCanvas
+      value: 
+      objectReference: {fileID: 218794986}
     - target: {fileID: 5199018839696481203, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
       propertyPath: m_Name
       value: PlayerCup
@@ -2022,6 +2030,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 1492891833}
+    - target: {fileID: 5955361431294284567, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
+      propertyPath: menuCanvas
+      value: 
+      objectReference: {fileID: 1339031776}
     - target: {fileID: 5955361431294284567, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
       propertyPath: povCamera1
       value: 
@@ -2034,6 +2046,22 @@ PrefabInstance:
       propertyPath: serveCanvas
       value: 
       objectReference: {fileID: 218794986}
+    - target: {fileID: 5955361431294284567, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
+      propertyPath: makingCanvas
+      value: 
+      objectReference: {fileID: 521802764}
+    - target: {fileID: 7427676057411222278, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7427676057411222278, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086279331285173526, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4763,17 +4791,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!114 &950575938 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3934286319153263506, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
-  m_PrefabInstance: {fileID: 398575741}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89ae8c4f9d7e27a448b89eb4b4abfc17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &963232502 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5955361431294284567, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
@@ -4783,6 +4800,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a7b2e0f627944546b8d6bd6b9446947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &963232507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3354645804899351144, guid: fb45673ccbf4bd44c8058b303910aa49, type: 3}
+  m_PrefabInstance: {fileID: 398575741}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ae8c4f9d7e27a448b89eb4b4abfc17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!43 &981746194
@@ -7714,14 +7742,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754560150}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.6590765, z: -0, w: 0.75207597}
-  m_LocalPosition: {x: -2.928, y: -0.059, z: 2.556}
+  m_LocalRotation: {x: 0, y: 0.77253413, z: 0, w: 0.6349733}
+  m_LocalPosition: {x: -2.329, y: -0.059000015, z: 3.652}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2047806759}
   m_Father: {fileID: 347831291}
-  m_LocalEulerAnglesHint: {x: 0, y: 82.459, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 101.164, z: 0}
 --- !u!1001 &1817932688
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8276,7 +8304,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 950575938}
+      - m_Target: {fileID: 963232507}
         m_TargetAssemblyTypeName: CupCapacity, Assembly-CSharp
         m_MethodName: ServeCup
         m_Mode: 1
@@ -8834,7 +8862,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 95ad3dbe34bedc2458e172a5e21fe5d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

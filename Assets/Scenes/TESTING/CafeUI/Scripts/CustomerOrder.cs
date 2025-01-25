@@ -13,6 +13,8 @@ public class CustomerOrder : MonoBehaviour
     
     public PlayerMovement playerMovement;
     
+    
+    
 
     void Start()
     {
@@ -42,7 +44,7 @@ public class CustomerOrder : MonoBehaviour
         customerCanvas.SetActive(false);
         orderRequest = false;
         playerMovement.canMove = true;
-
+        
         Debug.Log("Order request completed.");
         
     }

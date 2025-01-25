@@ -5,7 +5,12 @@ public class CupCapacity : MonoBehaviour
 {
     public HowFullIsCup cupCapacity;
     public bool canServe = false;
-
+    
+    [Header("Served")]
+    public GameObject serveCanvas;
+    public GameObject serveCamera;
+    public GameObject mainCamera;
+    
     private void Update()
     {
         if (cupCapacity.volume > 25)
@@ -14,9 +19,13 @@ public class CupCapacity : MonoBehaviour
         }
     }
 
+    // ServerCanvasButton
     public void ServeCup()
     {
         Destroy(GameObject.FindGameObjectWithTag("Bubble"));
         Destroy(GameObject.FindGameObjectWithTag("Player"));
+        serveCanvas.SetActive(false);
+        serveCamera.SetActive(false);
+        mainCamera.SetActive(true);
     }
 }

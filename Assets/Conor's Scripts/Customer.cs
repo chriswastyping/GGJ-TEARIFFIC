@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Text;
+using UnityEngine.Rendering.LookDev;
+using UnityEngine.UI;
 
 public class Customer : MonoBehaviour
 {
@@ -18,14 +20,35 @@ public class Customer : MonoBehaviour
 
     public TeaOrder CurrentOrder;
     public TextMeshProUGUI CustomerText;
+    private OrderManager orderManager;
+    public Button CreateOrderButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        orderManager = FindFirstObjectByType<OrderManager>();
         CurrentOrder = SetOrder();
         Debug.Log(CurrentOrder.CurrentFlavour.ToString());
-        CustomerText.text = "Hi! Can I have " + CurrentOrder.Size.ToString()+ AddSpacesToSentence(CurrentOrder.CurrentFlavour.ToString()) + " flavoured tea with " +
-            (CurrentOrder._hasIce ? "Ice " : "No Ice ") + "and "+ (CurrentOrder._hasBubbles ? "Bubbles" : "No Bubbles");
+
+        string sizeText = CurrentOrder.Size.ToString();
+        string flavorText = AddSpacesToSentence(CurrentOrder.CurrentFlavour.ToString());
+        string iceText = (CurrentOrder._hasIce ? "Ice " : "No Ice ");
+        string bubbleText = (CurrentOrder._hasBubbles ? "Bubbles" : "No Bubbles");
+
+        CustomerText.text = "Hi! Can I have " + sizeText +  " " + flavorText + " flavoured tea with " + iceText+ "and "+ bubbleText;
+        
+        orderManager.CreateOrder(sizeText, flavorText, iceText, bubbleText);
+    }
+
+    public void CreateOrder()
+    {
+
+        string sizeText = CurrentOrder.Size.ToString();
+        string flavorText = AddSpacesToSentence(CurrentOrder.CurrentFlavour.ToString());
+        string iceText = (CurrentOrder._hasIce ? "Ice " : "No Ice ");
+        string bubbleText = (CurrentOrder._hasBubbles ? "Bubbles" : "No Bubbles");
+
+        orderManager.CreateOrder(sizeText, flavorText, iceText, bubbleText);
     }
 
     TeaOrder SetOrder()

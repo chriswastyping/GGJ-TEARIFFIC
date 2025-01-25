@@ -10,6 +10,9 @@ public class CustomerOrder : MonoBehaviour
 
     public InputActionMap moveActionMap;
     public bool orderRequest = true;
+    
+    public PlayerMovement playerMovement;
+    
 
     void Start()
     {
@@ -29,6 +32,7 @@ public class CustomerOrder : MonoBehaviour
         {
             // Activate the customerCanvas once the movement is complete
             customerCanvas.SetActive(true);
+            playerMovement.canMove = false;
         });
     }
 
@@ -37,7 +41,9 @@ public class CustomerOrder : MonoBehaviour
         // Logic to handle canvas deactivation and further order handling
         customerCanvas.SetActive(false);
         orderRequest = false;
+        playerMovement.canMove = true;
 
         Debug.Log("Order request completed.");
+        
     }
 }

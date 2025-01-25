@@ -17,8 +17,12 @@ public class PlayerMovement : MonoBehaviour
     public GameObject povCamera2;
 
     private CameraState currentState = CameraState.Main;
-
-  //  public CustomerOrder isOrdering;
+    
+    public bool canMove = true;
+    
+    [Header("Serve")]
+    public GameObject serveCanvas;
+    public bool isServing = false;
 
     private enum CameraState
     {
@@ -29,25 +33,20 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-      //  isOrdering = GetComponent<CustomerOrder>();
         ActivateCamera(CameraState.Main);
     }
 
     private void FixedUpdate()
     {
-        rb2d.linearVelocity = new Vector2(movementDirection.x * moveSpeed, rb2d.linearVelocity.y);
+        if (canMove && rb2d != null)
+        {
+            rb2d.linearVelocity = new Vector2(movementDirection.x * moveSpeed, rb2d.linearVelocity.y);
+        }
     }
 
     void Update()
     {
-       // if (!isOrdering.orderRequest)
-      //  {
             movementDirection = moveAction.action.ReadValue<Vector2>();
-      //  }
-     //   else
-     //   {
-     //       moveAction.action.actionMap.Disable();
-     //   }
     }
 
     private void OnEnable()
@@ -62,11 +61,25 @@ public class PlayerMovement : MonoBehaviour
         switchToPOV2Action.action.started -= SwitchToPOV2;
     }
 
+    void Service()
+    {
+        if (isServing)
+        {
+            serveCanvas.SetActive(true);
+        }
+        else
+        {
+            serveCanvas.SetActive(false);
+        }
+    }
+
     private void SwitchToPOV1(InputAction.CallbackContext context)
     {
         if (currentState == CameraState.Main)
         {
             ActivateCamera(CameraState.POV1);
+            isServing = true;
+            Service();
         }
         else if (currentState == CameraState.POV2)
         {
@@ -79,10 +92,13 @@ public class PlayerMovement : MonoBehaviour
         if (currentState == CameraState.POV1)
         {
             ActivateCamera(CameraState.Main);
+            isServing = false;
+            Service();
         }
         else if (currentState == CameraState.Main)
         {
             ActivateCamera(CameraState.POV2);
+          
         }
     }
 

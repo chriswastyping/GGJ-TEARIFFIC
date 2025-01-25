@@ -1039,6 +1039,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "NewCup",
+                    "type": "Button",
+                    "id": "46330d86-9a1a-497e-a64c-e123bb28776a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1127,6 +1136,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "SwitchCameraW",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c853ff25-4925-439f-a839-a06b23cd4791",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NewCup",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

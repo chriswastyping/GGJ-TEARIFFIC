@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class CustomerOrder : MonoBehaviour
 {
@@ -23,7 +24,9 @@ public class CustomerOrder : MonoBehaviour
         t = Mathf.Clamp01(t);
 
         // Interpolate position based on t
-        transform.position = Vector3.Lerp(start.position, end.position, t);
+        transform.position = transform.DOMoveX(Vector2,-1, 1);
+        
+        
 
         // Check if the object is close enough to the target position
         if (Vector3.Distance(transform.position, end.position) < 0.01f)

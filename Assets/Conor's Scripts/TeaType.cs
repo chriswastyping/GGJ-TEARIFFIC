@@ -8,6 +8,7 @@ public enum TeaType
 
 public enum Sizes
 {
+    Empty,
     Small,
     Medium,
     Large

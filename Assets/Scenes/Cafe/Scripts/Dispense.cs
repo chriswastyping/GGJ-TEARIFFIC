@@ -22,11 +22,12 @@ public class Dispense : MonoBehaviour
     private void DispenseBubbles(InputAction.CallbackContext obj)
     {
         // Use the current position of the dispenser (this GameObject) for instantiation
-        Vector3 dispensePosition = transform.position;
+        //Vector2 dispensePosition = new Vector3(transform.position.x, transform.position.y, -transform.parent.position.z);
         if (canDispense)
         {
-            Instantiate(bubbles[0], dispensePosition, Quaternion.identity);
-            Debug.Log(dispensePosition);
+            var currentBubble = Instantiate(bubbles[0], transform.position, Quaternion.identity);
+            currentBubble.transform.SetParent(transform.parent,true);
+            //Debug.Log(dispensePosition);
         }
     }
 

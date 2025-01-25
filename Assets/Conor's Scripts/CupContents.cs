@@ -62,11 +62,11 @@ public class CupContents : MonoBehaviour
         {
             if (currentLiquid.Ice)
             {
-                _hasIce = false;
+                
             }
             else if (currentLiquid.Bubbles)
             {
-                _hasBubbles = false;
+               
             }
             else
             {

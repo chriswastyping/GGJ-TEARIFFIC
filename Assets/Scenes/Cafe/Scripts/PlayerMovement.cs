@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     private CameraState currentState = CameraState.Main;
 
+  //  public CustomerOrder isOrdering;
+
     private enum CameraState
     {
         Main,
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+      //  isOrdering = GetComponent<CustomerOrder>();
         ActivateCamera(CameraState.Main);
     }
 
@@ -37,7 +40,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        movementDirection = moveAction.action.ReadValue<Vector2>();
+       // if (!isOrdering.orderRequest)
+      //  {
+            movementDirection = moveAction.action.ReadValue<Vector2>();
+      //  }
+     //   else
+     //   {
+     //       moveAction.action.actionMap.Disable();
+     //   }
     }
 
     private void OnEnable()

@@ -54,6 +54,33 @@ public class CupContents : MonoBehaviour
         }
             
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        DispencedLiquid currentLiquid = collision.gameObject.GetComponent<DispencedLiquid>();
+
+        if (currentLiquid != null)
+        {
+            if (currentLiquid.Ice)
+            {
+                _hasIce = false;
+            }
+            else if (currentLiquid.Bubbles)
+            {
+                _hasBubbles = false;
+            }
+            else
+            {
+                currentVolume -= 1;
+                CheckVolume();
+            }
+            Debug.Log(currentVolume);
+        }
+        else
+        {
+            Debug.LogError("Dispenced Liquid Has No Type");
+        }
+
+    }
 
     private void CheckVolume()
     {

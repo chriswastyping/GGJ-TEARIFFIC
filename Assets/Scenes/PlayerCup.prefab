@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 697623282145082268}
   - component: {fileID: 2226656038005261449}
   - component: {fileID: 3354645804899351144}
+  - component: {fileID: 6737049704811678812}
   m_Layer: 2
   m_Name: PlayerCup
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f8d2a74e858a0458591385cb0b7604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cupPrefab: {fileID: -3888481672020999207, guid: a0a39d6dd49c6014f8e1e161ed603d1a, type: 3}
+  cupPrefab: {fileID: 7321368229055712323, guid: 3d0b9e63fece06841b35657bf8e4e6d1, type: 3}
   spawnCup: {fileID: -1057186134489258307, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!114 &5955361431294284567
 MonoBehaviour:
@@ -71,6 +72,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   povCamera1: {fileID: 0}
   povCamera2: {fileID: 0}
+  currentState: 0
   canMove: 1
   serveCanvas: {fileID: 0}
   isServing: 0
@@ -152,6 +154,25 @@ MonoBehaviour:
   serveCanvas: {fileID: 0}
   serveCamera: {fileID: 0}
   mainCamera: {fileID: 0}
+--- !u!114 &6737049704811678812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199018839696481203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1f66cf531a697f4c80faf56f49c0626, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TeaFlavour: 0
+  _hasIce: 0
+  _hasBubbles: 0
+  CupLevel: 0
+  SmallTheshold: 0
+  MediumTheshold: 0
+  LargeTheshold: 0
 --- !u!1001 &3590560093967932287
 PrefabInstance:
   m_ObjectHideFlags: 0

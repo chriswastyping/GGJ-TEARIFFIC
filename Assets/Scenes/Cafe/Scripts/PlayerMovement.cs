@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject povCamera1;
     public GameObject povCamera2;
 
-    private CameraState currentState = CameraState.Main;
+    public CameraState currentState = CameraState.Main;
     
     public bool canMove = true;
     
@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject menuCanvas;
     public bool openMenu = false;
 
-    private enum CameraState
+    public enum CameraState
     {
         Main,
         POV1,
@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void ActivateCamera(CameraState state)
+    public void ActivateCamera(CameraState state)
     {
         // Activate/deactivate cameras based on state
         mainCamera.SetActive(state == CameraState.Main);

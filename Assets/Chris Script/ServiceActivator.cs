@@ -13,6 +13,11 @@ public class ServiceActivator : MonoBehaviour
     public AudioClip dingClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
+    private void Awake()
+    {
+        dingAudio = GetComponent<AudioSource>();
+    }
+
     private void OnCollisionEnter2D(Collision2D other)
     {
         playerMovement = other.gameObject.GetComponent<PlayerMovement>();

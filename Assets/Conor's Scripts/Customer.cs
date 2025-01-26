@@ -38,8 +38,6 @@ public class Customer : MonoBehaviour
         string bubbleText = (CurrentOrder._hasBubbles ? "Bubbles" : "No Bubbles");
 
         CustomerText.text = "Hi! Can I have " + sizeText +  " " + flavorText + " flavoured tea with " + iceText+ "and "+ bubbleText;
-        
-        orderManager.CreateOrder(sizeText, flavorText, iceText, bubbleText);
     }
 
     public void CreateOrder()

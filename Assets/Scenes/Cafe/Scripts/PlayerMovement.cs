@@ -110,9 +110,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (currentState == CameraState.Main)
         {
-            ActivateCamera(CameraState.POV1);
-            isServing = true;
-            Service();
+           ServiceCall();
         }
         else if (currentState == CameraState.POV2)
         {
@@ -121,6 +119,13 @@ public class PlayerMovement : MonoBehaviour
             Menu();
            
         }
+    }
+
+    public void ServiceCall()
+    {
+        ActivateCamera(CameraState.POV1);
+        isServing = true;
+        Service();
     }
 
     private void SwitchToPOV2(InputAction.CallbackContext context)

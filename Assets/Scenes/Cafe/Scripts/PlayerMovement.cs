@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject menuCanvas;
     public bool openMenu = false;
 
+    public float TableAngle;
+
     public enum CameraState
     {
         Main,
@@ -74,10 +76,13 @@ public class PlayerMovement : MonoBehaviour
         if (isServing)
         {
             serveCanvas.SetActive(true);
+            canMove = false;
+            rb2d.linearVelocity = Vector2.zero;
         }
         else
         {
             serveCanvas.SetActive(false);
+            canMove = true;
         }
     }
 
@@ -91,10 +96,13 @@ public class PlayerMovement : MonoBehaviour
         if (openMenu)
         {
             menuCanvas.SetActive(true);
+            canMove = false;
+            rb2d.linearVelocity = Vector2.zero;
         }
         else
         {
             menuCanvas.SetActive(false);
+            canMove = true;
         }
     }
 

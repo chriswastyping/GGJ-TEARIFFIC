@@ -21,7 +21,9 @@ public class Customer : MonoBehaviour
     public TeaOrder CurrentOrder;
     public TextMeshProUGUI CustomerText;
     private OrderManager orderManager;
-    public Button CreateOrderButton;
+    //public Button CreateOrderButton;
+
+    private CupContents cupContents;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -80,5 +82,24 @@ public class Customer : MonoBehaviour
             newText.Append(text[i]);
         }
         return newText.ToString();
+    }
+
+    public void CheckCupContents()
+    {
+        cupContents = FindFirstObjectByType<CupContents>();
+
+        if(isCorrectOrder())
+        {
+            CupCapacity capacity = FindFirstObjectByType<CupCapacity>();
+            capacity.ServeCup();
+        }
+    }
+
+    bool isCorrectOrder()
+    {
+        bool isRight = (CurrentOrder.CurrentFlavour == cupContents.TeaFlavour) && (CurrentOrder._hasIce == cupContents._hasIce)
+            && (CurrentOrder._hasBubbles == cupContents._hasBubbles) && (CurrentOrder.Size == cupContents.CupLevel);
+        return isRight;
+
     }
 }

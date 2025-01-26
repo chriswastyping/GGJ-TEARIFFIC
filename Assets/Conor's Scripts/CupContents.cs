@@ -37,7 +37,7 @@ public class CupContents : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        newAudio.pitch = Random.Range(-1f, 1f);
+        
         newAudio.PlayOneShot(bubbleClip);
         
         DispencedLiquid currentLiquid = collision.gameObject.GetComponent<DispencedLiquid>();

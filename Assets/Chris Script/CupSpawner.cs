@@ -44,7 +44,7 @@ public class CupSpawner : MonoBehaviour
         
         newCup.transform.localScale = new Vector3(0.05f, 0.05f, 0.05f);
         
-        newAudio.pitch = Random.Range(-1f, 1f);
+        
         newAudio.PlayOneShot(cupClip);
     }
 }

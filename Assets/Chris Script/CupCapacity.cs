@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CupCapacity : MonoBehaviour
 {
-    public HowFullIsCup cupCapacity;
+    //public HowFullIsCup cupCapacity;
     public bool canServe = false;
     
     [Header("Served")]
@@ -19,13 +19,13 @@ public class CupCapacity : MonoBehaviour
         mainCameraPM = GetComponent<PlayerMovement>();
     }
 
-    private void Update()
-    {
-        if (cupCapacity.volume > 25)
-        {
-            canServe = true;
-        }
-    }
+    //private void Update()
+    //{
+    //    if (cupCapacity.volume > 25)
+    //    {
+    //        canServe = true;
+    //    }
+    //}
 
     // ServerCanvasButton
     public void ServeCup()

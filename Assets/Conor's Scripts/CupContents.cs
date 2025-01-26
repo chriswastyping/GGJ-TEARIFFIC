@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class CupContents : MonoBehaviour
 {
-
+    // SFX Clip
+    private AudioSource newAudio;
+    public AudioClip bubbleClip;
+    
     public TeaType TeaFlavour;
     public bool _hasIce;
     public bool _hasBubbles;
@@ -13,6 +16,10 @@ public class CupContents : MonoBehaviour
     public int LargeTheshold;
     private int currentVolume;
 
+    private void Awake()
+    {
+        newAudio = GetComponent<AudioSource>();
+    }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,6 +34,9 @@ public class CupContents : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        newAudio.pitch = Random.Range(-1f, 1f);
+        newAudio.PlayOneShot(bubbleClip);
+        
         DispencedLiquid currentLiquid = collision.gameObject.GetComponent<DispencedLiquid>();
 
         if(currentLiquid != null)

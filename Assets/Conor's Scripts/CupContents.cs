@@ -1,5 +1,7 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class CupContents : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class CupContents : MonoBehaviour
     public int LargeTheshold;
     private int currentVolume;
 
+    public TextMeshProUGUI SizeText;
     private void Awake()
     {
         newAudio = GetComponent<AudioSource>();
@@ -97,16 +100,19 @@ public class CupContents : MonoBehaviour
         if (currentVolume >= LargeTheshold)
         {
             CupLevel = Sizes.Large;
+            SizeText.text = CupLevel.ToString();
             return;
         }
         if (currentVolume >= MediumTheshold)
         {
             CupLevel = Sizes.Medium;
+            SizeText.text = CupLevel.ToString();
             return;
         }
         if (currentVolume >= SmallTheshold)
         {
             CupLevel = Sizes.Small;
+            SizeText.text = CupLevel.ToString();
             return;
         }
     }

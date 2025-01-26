@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class DummyCustomer : MonoBehaviour
@@ -14,6 +15,8 @@ public class DummyCustomer : MonoBehaviour
     public TeaOrder CurrentOrder;
 
     private CupContents cupContents;
+
+    public TextMeshProUGUI ResultsText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +29,7 @@ public class DummyCustomer : MonoBehaviour
         if(CheckCupContents()) 
         {
             Debug.Log("IT MATCHES");
+            ResultsText.text = "Order Matches";
         }
     }
 

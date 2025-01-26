@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6762472188183357658
+--- !u!1001 &555570450683948595
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,23 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1500711985438242211, guid: 9039414418f66e040b98cc47352c34d4, type: 3}
       propertyPath: m_Color.b
-      value: 0.2980392
+      value: 0.15884395
       objectReference: {fileID: 0}
     - target: {fileID: 1500711985438242211, guid: 9039414418f66e040b98cc47352c34d4, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.14343172
       objectReference: {fileID: 0}
     - target: {fileID: 1500711985438242211, guid: 9039414418f66e040b98cc47352c34d4, type: 3}
       propertyPath: m_Color.r
-      value: 0.3210906
+      value: 0.9622642
       objectReference: {fileID: 0}
-    - target: {fileID: 1500711985438242211, guid: 9039414418f66e040b98cc47352c34d4, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 149da3f782d9eb74ba2521bd21bfd898, type: 2}
     - target: {fileID: 3396669119006865161, guid: 9039414418f66e040b98cc47352c34d4, type: 3}
       propertyPath: Flavour
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4712964366801911292, guid: 9039414418f66e040b98cc47352c34d4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6766778326545972476, guid: 9039414418f66e040b98cc47352c34d4, type: 3}
       propertyPath: m_Name
-      value: MatchaTea
+      value: Strawberry
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

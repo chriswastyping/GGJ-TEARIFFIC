@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 1808638438621641050}
   - component: {fileID: 3198047406226990084}
   - component: {fileID: 5967391538512703445}
+  - component: {fileID: 9122206080832612299}
   m_Layer: 2
-  m_Name: Milk
+  m_Name: TaroMilk
   m_TagString: Bubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,3 +153,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &9122206080832612299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556908870285569142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f8a47668b6a5243b6fa22298b7dd57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Flavour: 2
+  Ice: 0
+  Bubbles: 0

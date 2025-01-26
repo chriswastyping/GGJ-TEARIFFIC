@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -57,6 +58,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
             movementDirection = moveAction.action.ReadValue<Vector2>();
+        if(Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     private void OnEnable()

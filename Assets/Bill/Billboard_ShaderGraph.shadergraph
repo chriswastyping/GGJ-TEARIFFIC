@@ -89,6 +89,9 @@
         },
         {
             "m_Id": "d910f9b9dc2b4aab9dfe254ed983cf9a"
+        },
+        {
+            "m_Id": "335c344afb6b41dca0b0e20dd46cc68d"
         }
     ],
     "m_GroupDatas": [
@@ -122,6 +125,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "aa66dd5317024dc8a1659139841b6768"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "335c344afb6b41dca0b0e20dd46cc68d"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "0e75825747d84423b76d38f5db7a74c4"
                 },
                 "m_SlotId": 0
             }
@@ -858,12 +875,45 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.VertexColorNode",
+    "m_ObjectId": "335c344afb6b41dca0b0e20dd46cc68d",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Vertex Color",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 1052.0,
+            "y": 290.4000244140625,
+            "width": 208.0,
+            "height": 277.5999755859375
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "960e940cc66c4dc1ad66819e4b9c4048"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 2,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.GroupData",
     "m_ObjectId": "3458d334473447e693f426f5cd9d2535",
     "m_Title": "BillBoarding",
     "m_Position": {
-        "x": -396.0,
-        "y": -127.9999771118164
+        "x": -396.8000183105469,
+        "y": -128.79998779296876
     }
 }
 
@@ -1917,6 +1967,31 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "SurfaceDescription.NormalTS"
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
+    "m_ObjectId": "960e940cc66c4dc1ad66819e4b9c4048",
+    "m_Id": 0,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+    },
+    "m_DefaultValue": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0,
+        "w": 1.0
+    },
+    "m_Labels": []
 }
 
 {

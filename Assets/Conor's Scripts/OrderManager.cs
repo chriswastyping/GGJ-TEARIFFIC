@@ -22,6 +22,7 @@ public class OrderManager : MonoBehaviour
         var newOrder = Instantiate(OrderTemplate,spawnPos,Quaternion.identity);
         newOrder.transform.SetParent(canvas.transform);
         newOrder.transform.SetAsFirstSibling();
+        newOrder.transform.localScale = new Vector3(5,5,5);
         newOrder.SetOrderDisplay(Size, Flavour, Ice, Bubbles);
         spawnPos.y += OrderYOffset;
     }

@@ -30,7 +30,13 @@ public class CupCapacity : MonoBehaviour
     // ServerCanvasButton
     public void ServeCup()
     {
-        Destroy(GameObject.FindGameObjectWithTag("Bubble"));
+        //Destroy(GameObject.FindGameObjectWithTag("Bubble"));
+
+        GameObject[] bubbles = GameObject.FindGameObjectsWithTag("Bubble");
+        foreach (GameObject bubble in  bubbles)
+        {
+            Destroy(bubble);
+        }
         Destroy(GameObject.FindGameObjectWithTag("Player"));
         serveCanvas.SetActive(false);
         serveCamera.SetActive(false);
